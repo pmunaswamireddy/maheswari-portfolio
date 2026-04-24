@@ -98,7 +98,7 @@ export default function MaheswariPortfolio() {
       id: 1, 
       degree: 'Bachelor of Technology (B.Tech)', 
       school: 'MTIET / JNTUA', 
-      date: '2021 – 2025',
+      date: '2021 — 2025 (Currently Pursuing)',
       grade: '8.72 CGPA (82.2%) [Upto 3-1 Semester]',
       details: 'Specialized in Machine Learning, Data Structures, and Python Programming. Currently pursuing 4th Year.' 
     },
@@ -153,6 +153,25 @@ export default function MaheswariPortfolio() {
     { id: 1, text: 'BIM for Entrepreneurs: Technical webinar by CMTI Bengaluru (Apr 2024).' },
     { id: 2, text: 'Viksit Bharat Quiz: Recognized by Ministry of Youth Affairs.' },
     { id: 3, text: 'MY Bharat Member: Registered and active in national youth portal.' }
+  ];
+
+  const hobbies = [
+    { id: 1, name: 'AI Exploration', text: 'Staying updated with latest LLMs and Generative AI trends.' },
+    { id: 2, name: 'Tech Blogging', text: 'Writing about data science concepts and tutorials.' },
+    { id: 3, name: 'Problem Solving', text: 'Competitive programming on platforms like LeetCode.' }
+  ];
+
+  const languages = [
+    { id: 1, name: 'English', level: 'Fluent' },
+    { id: 2, name: 'Telugu', level: 'Native' },
+    { id: 3, name: 'Hindi', level: 'Conversational' },
+    { id: 4, name: 'Sanskrit', level: 'Academic' }
+  ];
+
+  const hobbies = [
+    { id: 1, name: 'AI Exploration', text: 'Staying updated with latest LLMs and Generative AI trends.' },
+    { id: 2, name: 'Tech Blogging', text: 'Writing about data science concepts and tutorials.' },
+    { id: 3, name: 'Problem Solving', text: 'Competitive programming on platforms like LeetCode.' }
   ];
 
   return (
@@ -220,6 +239,18 @@ export default function MaheswariPortfolio() {
             <div className={`bento-card transition-all duration-1000 ${scrolled ? 'bg-[#030303] border-[#00f5d4]/40' : ''}`}>
               <h2><div className="icon-box"><User size={20}/></div> About</h2>
               <p className="text-sm leading-relaxed text-[#a0a0a0] italic">&quot;{basicInfo.summary}&quot;</p>
+            </div>
+
+            <div className={`bento-card transition-all duration-1000 ${scrolled ? 'bg-[#030303]' : ''}`}>
+              <h2><div className="icon-box"><Globe size={20}/></div> Languages</h2>
+              <div className="flex flex-col gap-4">
+                {languages.map(l => (
+                  <div key={l.id} className="flex justify-between items-center group">
+                    <span className="text-sm text-white/90 font-medium group-hover:text-[#00f5d4] transition-colors">{l.name}</span>
+                    <span className="text-[10px] text-[#9b5de5] uppercase font-bold tracking-tighter">{l.level}</span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -327,6 +358,16 @@ export default function MaheswariPortfolio() {
                 <div key={h.id} className="flex gap-3 items-start group">
                   <CheckCircle size={18} className="text-[#00f5d4] mt-1 shrink-0 group-hover:scale-125 transition-transform"/>
                   <span className="text-sm text-white/80 leading-relaxed">{h.text}</span>
+                </div>
+              ))}
+            </div>
+            
+            <h2 className="mt-10"><div className="icon-box"><Zap size={20}/></div> Interests</h2>
+            <div className="flex flex-col gap-4">
+              {hobbies.map(h => (
+                <div key={h.id} className="text-sm">
+                  <span className="text-[#00f5d4] font-bold block mb-1">{h.name}</span>
+                  <span className="text-white/60 text-xs">{h.text}</span>
                 </div>
               ))}
             </div>
